@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name's Portfolio</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Charter for text elements -->
+    <link href="https://fonts.googleapis.com/css2?family=Charter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles to ensure Charter font is applied and for general body styling */
+        body {
+            font-family: 'Charter', serif; /* Apply Charter font */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #ffffff; /* Pure white background */
+            color: #000000; /* Pure black text color */
+        }
+        /* Thin black vertical line for separation between left and right content sections */
+        .content-sections {
+            border-top: 1px solid #000000; /* Add a thin line below the new global header */
+        }
+        .left-section {
+            border-right: 1px solid #000000; /* Thin black vertical line for separation */
+            overflow-y: auto; /* Allow scrolling for text content if it exceeds screen height */
+        }
+        .right-section {
+            overflow-y: auto; /* Allow scrolling for projects if they exceed screen height */
+        }
+
+        /* Responsive adjustments for smaller screens (mobile) */
+        @media (max-width: 768px) {
+            .global-header {
+                flex-direction: column; /* Stack title and nav on mobile */
+                align-items: center; /* Center items on mobile */
+                padding: 1.5rem; /* Adjust padding for mobile */
+            }
+            .global-header nav ul {
+                flex-direction: row; /* Make menu horizontal on mobile */
+                justify-content: center;
+                flex-wrap: wrap; /* Allow wrapping if many items */
+                margin-top: 1rem; /* Space between title and nav on mobile */
+            }
+            .global-header nav li {
+                margin: 0.5rem 0.75rem; /* Spacing for horizontal menu items */
+            }
+            .global-header nav a {
+                padding: 0.25rem 0.5rem; /* Smaller padding for horizontal menu items */
+            }
+            .content-sections {
+                flex-direction: column; /* Stack content sections on mobile */
+                border-top: none; /* No top border on mobile */
+            }
+            .left-section {
+                width: 100%; /* Full width on mobile */
+                border-right: none; /* No vertical border on mobile */
+                border-bottom: 1px solid #000000; /* Thin black horizontal line for separation */
+                padding: 1.5rem; /* Adjust padding for mobile */
+            }
+            .right-section {
+                width: 100%; /* Full width on mobile */
+                padding: 1.5rem; /* Adjust padding for mobile */
+            }
+            .left-section h2, .left-section p, .left-section h3, .left-section ul {
+                text-align: center; /* Center align text on mobile for better flow */
+            }
+            .left-section .list-disc {
+                text-align: left; /* Keep list items left-aligned */
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-white text-black">
+
+    <!-- Global Header Section: Title (left) and Navigation (right) -->
+    <header class="global-header flex justify-between items-center p-6 md:p-8 w-full bg-white">
+        <!-- Portfolio Title -->
+        <h1 class="text-2xl md:text-3xl font-bold text-black">Your Name</h1>
+
+        <!-- Navigation Menu -->
+        <nav class="nav-menu">
+            <ul class="flex space-x-4 md:space-x-6">
+                <li>
+                    <a href="#about" class="text-base md:text-lg text-black font-medium">About</a>
+                </li>
+                <li>
+                    <a href="#projects" class="text-base md:text-lg text-black font-medium">Projects</a>
+                </li>
+                <li>
+                    <a href="#contact" class="text-base md:text-lg text-black font-medium">Contact</a>
+                </li>
+                <li>
+                    <a href="#resume" class="text-base md:text-lg text-black font-medium">Resume</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area: Left and Right Sections -->
+    <div class="content-sections flex flex-grow flex-col md:flex-row">
+        <!-- Left Section: About Me and CV Text Elements -->
+        <div class="left-section md:w-1/5 w-full p-6 md:p-8 flex flex-col items-start md:items-start">
+            <!-- About Me Section -->
+            <section id="about" class="w-full mb-8">
+                <h2 class="text-xl md:text-2xl font-semibold text-black mb-4">About Me</h2>
+                <p class="text-sm leading-relaxed mb-4">
+                    Hello! I'm [Your Name], a passionate [Your Profession/Field] with a keen eye for [Your Key Skill 1] and a strong foundation in [Your Key Skill 2]. I love creating [What you create, e.g., impactful designs, robust code, engaging content] that solves problems and delights users. My work focuses on [Your Niche/Approach, e.g., clean aesthetics, user-centric experiences, efficient solutions].
+                </p>
+                <p class="text-sm leading-relaxed">
+                    Outside of work, I enjoy [Hobby 1] and [Hobby 2], which often inspire my creative process. I'm always eager to learn new things and take on exciting challenges.
+                </p>
+            </section>
+
+            <!-- CV Text Elements Section -->
+            <section id="cv-details" class="w-full">
+                <h2 class="text-xl md:text-2xl font-semibold text-black mb-4">Experience & Education</h2>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-black mb-1">[Job Title] at [Company Name]</h3>
+                    <p class="text-xs mb-2">[Dates, e.g., Sept 2022 - Present]</p>
+                    <ul class="list-disc list-inside text-xs space-y-1">
+                        <li>[Key responsibility/achievement 1]</li>
+                        <li>[Key responsibility/achievement 2]</li>
+                        <li>[Key responsibility/achievement 3]</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-black mb-1">Bachelor of [Your Degree] in [Your Major]</h3>
+                    <p class="text-xs mb-2">[University Name], [Graduation Year]</p>
+                    <ul class="list-disc list-inside text-xs space-y-1">
+                        <li>[Relevant coursework/project 1]</li>
+                        <li>[Relevant coursework/project 2]</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-black mb-1">Skills</h3>
+                    <p class="text-xs">
+                        **Technical Skills:** [List your technical skills, e.g., HTML, CSS, JavaScript, React, Python, Figma, Photoshop]
+                    </p>
+                    <p class="text-xs">
+                        **Soft Skills:** [List your soft skills, e.g., Problem-solving, Communication, Teamwork, Creativity]
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Section: Projects Grid -->
+        <main class="right-section md:w-4/5 w-full p-6 md:p-8">
+            <section id="projects" class="w-full">
+                <h2 class="text-xl md:text-2xl font-semibold text-black mb-8 text-center md:text-left">My Projects</h2>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+
+                    <!-- Project Tile 1 -->
+                    <a href="#" class="block bg-white border border-black overflow-hidden aspect-square">
+                        <img src="https://placehold.co/600x600/ffffff/000000?text=Project+1" alt="Project 1 Thumbnail" class="w-full h-full object-cover">
+                    </a>
+
+                    <!-- Project Tile 2 -->
+                    <a href="#" class="block bg-white border border-black overflow-hidden aspect-square">
+                        <img src="https://placehold.co/600x600/ffffff/000000?text=Project+2" alt="Project 2 Thumbnail" class="w-full h-full object-cover">
+                    </a>
+
+                    <!-- Project Tile 3 -->
+                    <a href="#" class="block bg-white border border-black overflow-hidden aspect-square">
+                        <img src="https://placehold.co/600x600/ffffff/000000?text=Project+3" alt="Project 3 Thumbnail" class="w-full h-full object-cover">
+                    </a>
+
+                    <!-- Project Tile 4 -->
+                    <a href="#" class="block bg-white border border-black overflow-hidden aspect-square">
+                        <img src="https://placehold.co/600x600/ffffff/000000?text=Project+4" alt="Project 4 Thumbnail" class="w-full h-full object-cover">
+                    </a>
+
+                    <!-- Project Tile 5 -->
+                    <a href="#" class="block bg-white border border-black overflow-hidden aspect-square">
+                        <img src="https://placehold.co/600x600/ffffff/000000?text=Project+5" alt="Project 5 Thumbnail" class="w-full h-full object-cover">
+                    </a>
+
+                    <!-- Project Tile 6 -->
+                    <a href="#" class="block bg-white border border-black overflow-hidden aspect-square">
+                        <img src="https://placehold.co/600x600/ffffff/000000?text=Project+6" alt="Project 6 Thumbnail" class="w-full h-full object-cover">
+                    </a>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
